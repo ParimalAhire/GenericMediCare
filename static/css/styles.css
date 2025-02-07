@@ -10828,3 +10828,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+/* Custom css */
+
+.sale-badge {
+  top: 10px !important;          
+  right: 10px !important;    
+  font-size: 15px !important;   
+  background-color: #28a745 !important;
+}

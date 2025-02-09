@@ -52,7 +52,7 @@ def register_user(request):
             return redirect('home')
         else:
             print(form.errors)
-            messages.error(request, 'An error has occured during registration')
+            messages.error(request, f"An error has occurred during registration: {form.errors.as_text()}")
             return redirect('register')
     
     else:

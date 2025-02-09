@@ -17,7 +17,17 @@
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
     <body>
+
         {% include 'navbar.html' %}
+        
+        <header class="bg-success bg-gradient py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    {% block header %}
+                    {% endblock %}
+                </div>
+            </div>
+        </header>
         {% if messages %}
 
             {% for message in messages %}
@@ -33,8 +43,8 @@
         {% endblock %}
 
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <footer class="py-5 bg-success bg-gradient bg-opacity-60 ">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; GenericMediCare 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

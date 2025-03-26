@@ -19,15 +19,7 @@
     <body>
 
         {% include 'navbar.html' %}
-        
-        <header class="bg-success bg-gradient py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="text-center text-white">
-                    {% block header %}
-                    {% endblock %}
-                </div>
-            </div>
-        </header>
+
         {% if messages %}
 
             {% for message in messages %}
@@ -38,6 +30,16 @@
             {% endfor %}
         
         {% endif %}
+        
+        <header class="bg-success bg-gradient py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    {% block header %}
+                    {% endblock %}
+                </div>
+            </div>
+        </header>
+        
 
         {% block content %}
         {% endblock %}

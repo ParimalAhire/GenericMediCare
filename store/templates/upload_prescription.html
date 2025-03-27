@@ -1,0 +1,6 @@
+<form action="{% url 'suggest_alternatives' %}" method="POST">
+    {% csrf_token %}
+    <label for="composition">Enter Prescription Composition:</label>
+    <input type="text" name="composition" required>
+    <button type="submit">Find Alternatives</button>
+</form>

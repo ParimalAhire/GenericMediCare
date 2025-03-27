@@ -5,14 +5,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from .forms import SignUpForm
 from django.contrib import messages
-from .models import Product
-
-def product(request,pk):
-    product = Product.objects.get(id=pk)
-    return render(request, 'product.html',{'product':product})
+from .models import Medicine
 
 def home(request):
-    products = Product.objects.all()
+    products = Medicine.objects.all()
     return render(request, 'home.html', {'products':products})
 
 def about(request):
@@ -61,3 +57,11 @@ def register_user(request):
     
     else:
         return render(request, 'register.html', {'form':form})
+
+def suggest_alternatives(request):
+    if request.method == "POST":
+        prescribed_composition = request.POST.get("composition")  # Get composition from form
+        alternatives = Medicine.find_alternatives(prescribed_composition)
+        return render(request, "suggest_alternatives.html", {"alternatives": alternatives})
+    
+    return render(request, "upload_prescription.html")

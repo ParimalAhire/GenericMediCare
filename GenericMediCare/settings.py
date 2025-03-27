@@ -13,6 +13,8 @@ SECRET_KEY = 'django-insecure-fhvuw0n(h^o#gjdyhk3s%%q2&(u#t%@h*+(ol^aw%cpvd3c52=
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+AUTH_USER_MODEL = 'store.User'
+
 
 ALLOWED_HOSTS = []
 

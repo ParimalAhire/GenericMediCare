@@ -1,0 +1,11 @@
+<h2>Generic Alternatives</h2>
+
+{% if alternatives %}
+    <ul>
+        {% for medicine in alternatives %}
+            <li>{{ medicine.name }} ({{ medicine.generic_name }}) - ₹{{ medicine.price }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No alternatives found.</p>
+{% endif %}
